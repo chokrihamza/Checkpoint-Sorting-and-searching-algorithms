@@ -1,0 +1,49 @@
+// Procédure de tri par insertion
+PROCEDURE tri_insertion( var T : ARRAY_OF INTEGER[];)
+VAR
+   i,x,n:INTEGER;
+BEGIN
+  n:=T.length;
+  FOR i FROM 1 TO n-1 STEP 1  DO
+      x := T[i] ;
+       j := i ;   
+       WHILE (j > 0 et T[j-1] > x) DO
+           T[j] := T[j-1];
+            j := j-1;
+            T[j] := x;
+       END_WHILE                           
+           
+                     
+  END_FOR
+ /*********************************************************/      
+END
+// fonction pour lire la taille du tableau 
+FUNCTION tailleTableau() : INTEGER
+VAR
+    n:INTEGER
+BEGIN
+read(n);
+RETURN n;
+END
+/********************procedure pour lire les valeurs du tableau ************************************/
+PROCEDURE readarray(n:INTEGER,var T:ARRAY_OF INTEGER)
+VAR
+   
+   i:INTEGER:=0;
+BEGIN
+    FOR i FROM 0 TO n STEP 1  DO
+    write("enter les elements du tableau1");
+    read(T[i]);
+END
+/***************************main algorithme *****************************************/
+ALGORITHM Tri_par_insertion
+VAR
+    n:INTEGER;
+    tableau:ARRAY_OF INTEGER[50];
+BEGIN
+  n=tailleTableau();
+  readarray(n,tableau);
+  tri_insertion(tableau);
+END
+/********************************************************************************/
+       
